@@ -19,7 +19,7 @@ let gameOver = false;
 let chanceArea = document.getElementById("chance-area");
 let history=[];
 let viewButton =document.getElementById("view-button");
-
+let correctButton = document.getElementById("correct-button");
 
 
 playButton.addEventListener("click",play);
@@ -28,6 +28,10 @@ userInput.addEventListener("focus",function(){
     userInput.value="";
 });
 viewButton.addEventListener("click",gveiw);
+
+
+correctButton.disabled = true;   
+ 
 
 function gveiw(){
     if(gameArea.style.display === 'none') {
@@ -68,14 +72,12 @@ function play(){
   
    if(userValue < computerNum) {
         resultArea.textContent = "Up!!!!";
-    //console.log("Up!!!!")
+
    }else if(userValue > computerNum) {
         resultArea.textContent = "Down!!!!";
-    //console.log("Down!!!!")
    }else{
         resultArea.textContent = "정답을 맞췄습니다.";
         gameOver = true;
-    //console.log("정답을 맞췄습니다.")
    }
 
    history.push(userValue);
@@ -84,19 +86,18 @@ function play(){
 
    if(chances < 1){
      gameOver = true;
-     //resultArea.textContent = `정답은 ${computerNum}`;
-     
+        correctButton.disabled = false;   
+        correctButton.addEventListener("click",correct);
+        function correct(){
+            resultArea.textContent = `정답은 ${computerNum}입니다.`;
+        }     
    }
    if(gameOver == true) {
-    playButton.disabled = true;
-    
- 
-    //resultArea.textContent = `Game Over! 정답은 ${computerNum} `;
+    playButton.disabled = true;   
    }
 }
 
-function reset(){
-   
+function reset(){  
     
     
     //새로운 번호가 생성된다
@@ -107,8 +108,8 @@ function reset(){
     playButton.disabled = false;
     chances = 7;
     chanceArea.textContent =`남은 기회:${chances}`;
-    history=[];
- 
+    history=[]; 
 
 }
+
 pinkRandomNum();
