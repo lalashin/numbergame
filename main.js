@@ -85,18 +85,30 @@ function play(){
    if(chances < 1){
      gameOver = true;
      //resultArea.textContent = `정답은 ${computerNum}`;
+     
    }
    if(gameOver == true) {
     playButton.disabled = true;
-    resultArea.textContent = `Game Over! 정답은 ${computerNum} `;
+    
+ 
+    //resultArea.textContent = `Game Over! 정답은 ${computerNum} `;
    }
 }
 
 function reset(){
-    //user input 깨끗하게 정리
-    userInput.value = "";
+   
+    
+    
     //새로운 번호가 생성된다
     pinkRandomNum();
+    userInput.value = "";
     resultArea.textContent = "게임을 시작하세요!!";
+    gameOver = false;
+    playButton.disabled = false;
+    chances = 7;
+    chanceArea.textContent =`남은 기회:${chances}`;
+    history=[];
+ 
+
 }
 pinkRandomNum();
