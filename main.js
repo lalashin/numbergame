@@ -84,11 +84,11 @@ function play(){
 
    if(chances < 1){
      gameOver = true;
-     resultArea.textContent = `정답은 ${computerNum}`;
+     //resultArea.textContent = `정답은 ${computerNum}`;
    }
    if(gameOver == true) {
     playButton.disabled = true;
-   // resultArea.textContent = `정답은 ${computerNum}`;
+    resultArea.textContent = `Game Over! 정답은 ${computerNum} `;
    }
 }
 
