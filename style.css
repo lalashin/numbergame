@@ -303,7 +303,7 @@ body {
     .game_wrap {
         width: 95%;
         padding: 18px;
-        top: 50px;
+        top: 10px;
     }
     .game_wrap h1 {
         font-size: 28px;
