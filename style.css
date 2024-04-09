@@ -1,0 +1,338 @@
+@font-face {
+    font-family: 'SF_HambakSnow';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HambakSnow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	font-family: 'SF_HambakSnow';
+}
+body {
+    margin: 0;
+    position: relative;
+    background: #ffdd02;
+}
+
+.game_wrap {
+    position: absolute;
+    padding: 30px;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    text-align: center;   
+    border: 7px solid #fff;
+    box-sizing: border-box;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .3);
+}
+.game_wrap h1 {
+    position: relative; 
+    font-size: 40px;
+    font-weight: bold;
+}
+.game_wrap h1:after {
+    position: absolute;
+    content: "";    
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    width: 80%;
+    height: 7px;
+    background: #3bdfeb;
+}
+
+.game_wrap ul {
+    margin: auto;
+    width: 80%;
+    text-align: left;
+}
+.game_wrap ul li {
+    padding-left: 30px;
+    height: 25px;
+}
+
+.game_area {    
+    margin-top: 50px;
+    display: none;
+}
+
+/* .game_area.on{
+    display: block;
+} */
+
+.result_area {
+    margin: auto;
+    width: 700px;
+    height: 200px;
+    font-size: 30px;
+    line-height: 200px;
+    border: 1px solid #fff;
+    /* background: rgba(255, 255, 255, .5); */
+}
+
+.chance_area {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.input_area {
+    margin: auto;
+    width: 300px;
+
+}
+  .user_input {
+    margin: auto;
+    position: relative;
+    width: 300px;  
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  input {
+    font-size: 15px;
+    color: #222222;
+    width: 300px;
+    border: none;
+    border-bottom: solid #000 1px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    background: none;
+    z-index: 5;
+  }
+  
+  input::placeholder { color: #000; }
+  input:focus { outline: none; }
+  
+  span {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;  /* right로만 바꿔주면 오 - 왼 */
+    background-color: #000;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    transform: translateX(-50%);
+    transition: 0.5s;
+  }
+  
+  label {
+  position: absolute;
+  color: #666;
+  width: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  bottom: 8px;
+  transition: all .2s;
+  }
+  
+  input:focus ~ label, input:valid ~ label {
+  font-size: 16px;
+  bottom: 40px;
+  color: #666;
+  font-weight: bold;
+  }
+  
+  input:focus ~ span, input:valid ~ span {
+  width: 100%;
+  }
+
+  
+  button {
+    margin: 20px;
+}
+
+.w-btn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+
+
+.w-btn:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.w-btn:active {
+    transform: scale(1.5);
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+.w-btn-neon2 {
+    position: relative;
+    border: none;
+    min-width: 200px;
+    min-height: 50px;
+    background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+    border-radius: 1000px;
+    color: darkslategray;
+    cursor: pointer;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.w-btn-neon2:hover {
+    transform: scale(1.2);
+}
+
+.w-btn-neon2:hover::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00ffcb;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+
+
+  .button_area {
+    margin-top: 40px;
+    /* padding: 30px; */
+    border-top: 1px solid #fff;
+    
+  }
+
+  .btn {
+    margin-top: 20px;
+    padding: 10px;
+    width: 150px;
+    height: 40px;
+    color: #fff;
+    font-size: 24px;
+    line-height: .5;
+    /* border-radius: 50px; */
+    background: #000;
+    border: 1px solid #000;
+  }
+
+  .btn.reset {
+    color: #000;
+    background: #fff;
+  }
+
+
+  @media (max-width: 1280px){
+
+    .result_area {
+        width: 98%;
+        font-size: 24px;
+    }
+
+  }
+
+  @media (max-width: 1024px){
+
+    .game_wrap {
+        width: 80%;
+    }
+
+    .result_area {
+        height: 100px;
+        word-break:break-all;
+        line-height: 2;
+    }
+  }
+
+
+  @media (max-width: 768px){
+    .game_wrap h1 {
+        position: relative;
+        font-size: 36px;
+        font-weight: bold;
+    }
+    .game_wrap h1:after {
+        position: absolute;
+        content: "";
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -10px;
+        width: 95%;
+        height: 7px;
+        background: #3bdfeb;
+    }
+
+    .game_wrap ul {
+        margin: auto;
+        width: 100%;
+        text-align: left;
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+
+  
+    .game_wrap {
+        width: 95%;
+        padding: 18px;
+        top: 50px;
+    }
+    .game_wrap h1 {
+        font-size: 28px;
+    }
+    .game_wrap ul {
+        margin-top: 30px;
+    }
+    .game_wrap ul li {
+        padding-left: 0;
+        height: auto;
+    }
+    .game_area {
+        margin-top: 23px;
+        
+
+    }
+    .result_area {
+        width: 94%;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .button_area {
+        margin-top: 23px;
+    }
+    .btn {
+       
+        width: 100px;
+        
+        font-size: 16px;
+       
+    }
+  }

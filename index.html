@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div class="game_wrap">
+    <h1>숫자 맞추기 게임 ; 두뇌 게임 :D</h1>
+    <ul>
+        <li>규칙1 : 1부터 100까지 랜덤으로 뜨는 숫자를 맞추세요!</li>
+        <li>규칙2 : 게임의 찬스는 7회입니다.</li>
+    </ul>
+    <div id="game-area" class="game_area" style="display: none;">
+        <div id="result-area" class="result_area">결과는?</div>
+        <div id="chance-area" class="chance_area">찬스 : 7</div>
+        <div class="input_area">
+            <div class="user_input">
+                <input type="number" id="user-input" class="user_input" required>
+                <label>1부터 100까지 숫자를 입력</label>
+                <span></span>
+            </div>
+        </div>
+            
+        <button id="play-button"  class="w-btn w-btn-neon2" type="button">Go!</button>
+       
+    </div>
+
+    <div class="button_area">
+        <button id="view-button" class="btn">시작하기</button>
+        <button id="reset-button" class="btn reset">초기화</button>
+    </div>
+    
+       
+</div>
+    
+    <script src="main.js"></script>
+</body>
+
+</html>
